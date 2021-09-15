@@ -1,0 +1,46 @@
+DROP DATABASE IF EXISTS Works;
+CREATE DATABASE Works DEFAULT CHARSET=GBK;
+USE Works;
+CREATE TABLE UserUnfo
+(
+UserName nvarchar(50) Primary key,
+Password nvarchar(50) not null,
+QQ nvarchar(12),
+Email nvarchar(50),
+Type nchar(10) not null,
+UserImg nvarchar(250)
+);
+CREATE TABLE Activity
+(
+ActivityID int Primary key auto_increment,
+ActivityVerify nchar(10) not null DEFAULT '´ýÉóºË',
+ActivityName nvarchar(50),
+EndTime nvarchar(50),
+ActivityPichure nvarchar(200),
+ActivityIntroduction nvarchar(50),
+Summary nvarchar(10),
+ActivityStatus nvarchar(50),
+UserName nvarchar(50)
+);
+CREATE TABLE WorkInfo
+(
+WorkId nvarchar (50),
+WorkName nvarchar(40),
+WoorkPicture nvarchar(200) not null,
+UploadTime nvarchar(50),
+WorkIntroduction nvarchar(50),
+WorkVerify nvarchar(50),
+UserName nvarchar(50) Primary key,
+ActivityName nvarchar(50),
+Recommend nvarchar(100),
+RecommendTime nvarchar(800)
+);
+CREATE TABLE Comment
+(
+CommentID nvarchar(12),
+WorkID nvarchar(50),
+WorkNmae nvarchar(50),
+UserName nvarchar(50) Primary key,
+CommentContent nvarchar(200),
+CommentTime nvarchar(100)
+);
